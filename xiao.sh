@@ -1,1 +1,1 @@
-python3 /root/xiaozhi_text_monitor.py &
+python3 /root/MyProjects/xiaozhi_text_monitor.py &

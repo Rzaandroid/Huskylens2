@@ -220,12 +220,12 @@ try:
             if(x<480-50 and x>480-50-100 and y>50 and y<50+100):
                 a=0
                 print("TOUCHED")
-                os.system(filenames[0])
+                os.system("/root/MyProjects/"+filenames[0])
 
             if(x<480-50 and x>480-50-100 and y>50+gap and y<50+100+gap):
                 a=0
                 print("TOUCHED")   
-                os.system(filenames[1]) 
+                os.system("/root/MyProjects/"+filenames[1]) 
 
             # Draw a red circle where the touch was detected
             cv2.circle(screen, (x, y), 10, (0, 0, 255), -1)
@@ -233,8 +233,9 @@ try:
         for n in range(count):
             cv2.rectangle(screen, (480-50, 50+gap), (480-50-100, 50+100+gap), (a, 255, a), 3)                                           
             cv2.putText(screen,filenames[n],(480-50-100,50+100+20+gap),cv2.FONT_HERSHEY_SIMPLEX,1,(255, 255, 255),2,cv2.LINE_AA) 
-            if gap<150*3-1:
-                gap = gap+100
+            gap = gap+100
+
+        gap = 50
 
         # Convert BGR to BGRA
         frame_bgra = cv2.cvtColor(screen, cv2.COLOR_BGR2BGRA)
